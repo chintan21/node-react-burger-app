@@ -1,8 +1,9 @@
+const keys = require('../config/keys');
 const { Ingredients } = require('../models/Ingredients');
 
 module.exports = app => {
   app.get('/api/ingredients', (req, res) => {
-    Ingredients.findById('5bb7bdf87c8b3d511646f112') //use your id from database
+    Ingredients.findById(keys.ING_ID) //use your id from database
       .then(ingredient => {
         res.send(ingredient);
       })
